@@ -5,17 +5,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mensagem Importante</title>
+    <title>Mensagem Importante!</title>
 </head>
 
 <body>
     <div id="conteudo">
         <h2>Sextou, hoje é dia de?</h2>
 
-        <button class="btn" onclick="opcaoErrada()">Treinar</button>
-        <button class="btn" onclick="opcaoErrada()">Comer</button>
-        <button class="btn" onclick="opcaoErrada()">Festar</button>
-        <button class="btn" onclick="opcaoCerta()">Namorar</button>
+        <div class="botoes">
+            <button class="btn" onclick="opcaoErrada()">Treinar</button>
+            <button class="btn" onclick="opcaoErrada()">Comer</button>
+            <button class="btn" onclick="opcaoErrada()">Festar</button>
+            <button class="btn" onclick="opcaoCerta()">Namorar</button>
+        </div>
 
         <div class="beneficios" id="beneficios" style="display: none;">
             <h3>Benefícios:</h3>
@@ -29,27 +31,28 @@
 </body>
 
 <style>
-    .beneficios ul {
-        list-style: none;
+    * {
+        margin: 0;
         padding: 0;
+        box-sizing: border-box;
     }
 
-    .beneficios li {
-        margin-bottom: 10px;
+    body {
+        background-color: #560404;
+        font-family: sans-serif;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
     }
 
     #conteudo {
-        background: #560404;
-        width: 100%;
-        height: 100%;
-        position: fixed;
-        top: 0;
-        left: 0;
-        padding: 10px;
         text-align: center;
-        font-family: sans-serif;
-        font-size: 1.7rem;
-        color: white;
+    }
+
+    .botoes {
+        margin: 20px 0;
     }
 
     .btn {
@@ -62,6 +65,15 @@
         margin: 5px;
         cursor: pointer;
     }
+
+    .beneficios ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .beneficios li {
+        margin-bottom: 10px;
+    }
 </style>
 
 <script>
@@ -71,11 +83,11 @@
 
     function opcaoCerta() {
         const beneficios = document.getElementById('beneficios');
-        beneficios.style.display = 'block'; // Exibe os benefícios
+        beneficios.style.display = 'block';
 
-        alert("Parabéns, essa é a melhor opção! Clique em ok para ver os benefícios");
+        alert("Parabéns, essa é a melhor opção!");
 
-        // Redireciona para o YouTube após 3 segundos
+        // Redireciona após 3 segundos
         setTimeout(() => {
             location.href = "https://music.youtube.com/watch?v=izGwDsrQ1eQ";
         }, 3000);

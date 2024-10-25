@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mensagem Importante</title>
+</head>
+
+<body>
+    <div id="conteudo">
+        <h2>Sextou, hoje é dia de?</h2>
+
+        <button class="btn" onclick="opcaoErrada()">Treinar</button>
+        <button class="btn" onclick="opcaoErrada()">Comer</button>
+        <button class="btn" onclick="opcaoErrada()">Festar</button>
+        <button class="btn" onclick="opcaoCerta()">Namorar</button>
+
+        <div class="beneficios" id="beneficios" style="display: none;">
+            <h3>Benefícios:</h3>
+            <ul>
+                <li>Bom humor</li>
+                <li>Relaxamento</li>
+                <li>Pele revigorada</li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+<style>
+    .beneficios ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .beneficios li {
+        margin-bottom: 10px;
+    }
+
+    #conteudo {
+        background: #560404;
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        padding: 10px;
+        text-align: center;
+        font-family: sans-serif;
+        font-size: 1.7rem;
+        color: white;
+    }
+
+    .btn {
+        background: black;
+        color: white;
+        border: none;
+        padding: 10px;
+        width: 110px;
+        border-radius: 5px;
+        margin: 5px;
+        cursor: pointer;
+    }
+</style>
+
+<script>
+    function opcaoErrada() {
+        alert("Opção boa, mas errada.");
+    }
+
+    function opcaoCerta() {
+        const beneficios = document.getElementById('beneficios');
+        beneficios.style.display = 'block'; // Exibe os benefícios
+
+        alert("Parabéns, essa é a melhor opção! Clique em ok para ver os benefícios");
+
+        // Redireciona para o YouTube após 3 segundos
+        setTimeout(() => {
+            location.href = "https://music.youtube.com/watch?v=izGwDsrQ1eQ";
+        }, 3000);
+    }
+</script>
+
+</html>
